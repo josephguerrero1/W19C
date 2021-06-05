@@ -3,14 +3,21 @@ class Player:
         self.rowPosition = intitalRow
         self.columnPosition = initialColumn
 
-    # TODO
-    # def moveUp(self):
+    def moveUp(self):
+        if(userMove == "w"):
+            self.rowPosition - 1
 
-    # TODO
-    # def moveDown(self):
+    def moveDown(self):
+        userMove = input("")
+        if(userMove == "s"):
+            self.rowPosition + 1
 
-    # TODO
-    # def moveLeft(self):
+    def moveLeft(self):
+        userMove = input("")
+        if(userMove == "a"):
+            self.rowPosition - 1
 
-    # TODO
-    # def moveRight(self):
+    def moveRight(self):
+        userMove = input("")
+        if(userMove == "d"):
+            self.rowPosition + 1

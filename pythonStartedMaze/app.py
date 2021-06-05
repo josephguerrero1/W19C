@@ -11,6 +11,7 @@ print("To move right: d")
 print("Try to get to the end! Good Luck!")
 print("-----------------------------")
 
+printBoard()
 # TODO
 # Create a new GameBoard called board
 # Create a new Player called played starting at position 3,2

@@ -46,6 +46,13 @@ class GameBoard:
             return False
         return True
 
+    def checkWin(self, playerRow, playerColumn):
+        if playerRow == 0 and playerColumn == 2:
+            print("You have won the game!")
+            return True
+        else:
+            return False
+
     # TODO
     # Return True if the player is in the winning column and row
     # Return False otherwise
