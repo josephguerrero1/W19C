@@ -48,7 +48,7 @@ class GameBoard:
 
     def checkWin(self, playerRow, playerColumn):
         if playerRow == self.winningRow and playerColumn == self.winningColumn:
-            print("You have won the game!")
+            print("Congratulations! You have won the game!")
             return False
         else:
             return True

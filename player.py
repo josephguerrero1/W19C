@@ -1,19 +1,16 @@
-import app
-
 class Player:
-    def __init__(self, intitalRow, initialColumn, userSelection):
+    def __init__(self, intitalRow, initialColumn):
         self.rowPosition = intitalRow
         self.columnPosition = initialColumn
-        self.userSelection = app.selection
 
-    def movePlayer(self):
-        if(self.userSelection == "w" or "W"):
-            self.rowPosition - 1
-        elif(self.userSelection == "s" or "S"):
-            self.rowPosition + 1
-        elif(self.userSelection == "a" or "A"):
-            self.columnPosition - 1
-        elif(self.userSelection == "d" or "D"):
-            self.columnPosition + 1
-        else:
-            print("Invalid Selection!")
+    def moveUp(self):
+        self.rowPosition = self.rowPosition - 1
+
+    def moveDown(self):
+        self.rowPosition = self.rowPosition + 1
+
+    def moveLeft(self):
+        self.columnPosition = self.columnPosition - 1
+
+    def moveRight(self):
+        self.columnPosition = self.columnPosition + 1

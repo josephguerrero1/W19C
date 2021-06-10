@@ -15,23 +15,38 @@ print("-----------------------------")
 # Create a new GameBoard called board
 # Create a new Player called played starting at position 3,2
 
-gameboard.printBoard(2, 3)
+board = gameboard.GameBoard()
+played = player.Player(3, 2)
+
 
 while True:
-    gameboard.printBoard(player.rowPosition, player.columnPosition)
+    board.printBoard(played.rowPosition, played.columnPosition)
     selection = input("Make a move: ")
-    if(selection == "w" or "W"):
-        gameboard.checkMove(player.rowPosition - 1, player.columnPosition)
-    elif(selection == "s" or "S"):
-        gameboard.checkMove(player.rowPosition + 1, player.columnPosition)
-    elif(selection == "a" or "A"):
-        gameboard.checkMove(player.rowPosition, player.columnPosition - 1)
-    elif(selection == "d" or "D"):
-        gameboard.checkMove(player.rowPosition, player.columnPosition + 1)
+
+    if(selection == "w"):
+        board.checkMove(played.rowPosition - 1, played.columnPosition)
+    elif(selection == "s"):
+        board.checkMove(played.rowPosition + 1, played.columnPosition)
+    elif(selection == "a"):
+        board.checkMove(played.rowPosition, played.columnPosition - 1)
+    elif(selection == "d"):
+        board.checkMove(played.rowPosition, played.columnPosition + 1)
     else:
         print("Error! Selection is invalid!")
-    player.movePlayer()
-    gameboard.checkWin(player.rowPosition, player.columnPosition)
+
+    if(selection == "w" and board[played.rowPosition][played.columnPosition].find("*") == -1):
+        played.moveUp()
+    elif(selection == "s" and board[played.rowPosition][played.columnPosition].find("*") == -1):
+        played.moveDown()
+    elif(selection == "a" and board[played.rowPosition][played.columnPosition].find("*") == -1):
+        played.moveLeft()
+    elif(selection == "d" and board[played.rowPosition][played.columnPosition].find("*") == -1):
+        played.moveRight()
+    else:
+        print("Error! Invalid Selection!")
+
+    board.checkWin(played.rowPosition, played.columnPosition)
+
     # TODO
     # Move the player through the board
     # Check if the player has won, if so print a message and break the loop!
