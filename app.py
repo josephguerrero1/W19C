@@ -34,18 +34,21 @@ while True:
     else:
         print("Error! Selection is invalid!")
 
-    if(selection == "w" and board[played.rowPosition][played.columnPosition].find("*") == -1):
+    if(selection == "w"):
         played.moveUp()
-    elif(selection == "s" and board[played.rowPosition][played.columnPosition].find("*") == -1):
+    elif(selection == "s"):
         played.moveDown()
-    elif(selection == "a" and board[played.rowPosition][played.columnPosition].find("*") == -1):
+    elif(selection == "a"):
         played.moveLeft()
-    elif(selection == "d" and board[played.rowPosition][played.columnPosition].find("*") == -1):
+    elif(selection == "d"):
         played.moveRight()
     else:
         print("Error! Invalid Selection!")
 
     board.checkWin(played.rowPosition, played.columnPosition)
+
+    if(board.checkWin(played.rowPosition, played.columnPosition) == True):
+        break
 
     # TODO
     # Move the player through the board
